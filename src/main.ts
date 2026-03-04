@@ -66,28 +66,78 @@ function applyCream(input: HTMLInputElement): void {
 }
 
 function applySyrup(input: HTMLInputElement): void {
-  // TODO: implement this function
+  const syrupDiv = document.querySelector(".syrup") as HTMLDivElement | null;
+  if (!syrupDiv) return;
+
+  const color = syrups[input.value];
+  if (!color) return;
+
+  syrupDiv.style.setProperty("--syrup-color", color);
 }
 
 function setupSyrupListeners(): void {
-  // TODO: implement this function
+  const syrupInputs = document.querySelectorAll<HTMLInputElement>(
+    'input[name="syrup"]'
+  );
+
+  syrupInputs.forEach((input) => {
+    input.addEventListener("change", () => applySyrup(input));
+  });
+
+  const checked = document.querySelector<HTMLInputElement>(
+    'input[name="syrup"]:checked'
+  );
+  if (checked) applySyrup(checked);
 }
 
 setupSyrupListeners();
 
 function setupCreamListeners(): void {
-  // TODO: implement this function
+  const creamInputs = document.querySelectorAll<HTMLInputElement>(
+    'input[name="cream"]'
+  );
+
+  creamInputs.forEach((input) => {
+    input.addEventListener("change", () => applyCream(input));
+  });
+
+  const checked = document.querySelector<HTMLInputElement>(
+    'input[name="cream"]:checked'
+  );
+  if (checked) applyCream(checked);
 }
 setupCreamListeners();
 
 function setupTemperatureListeners(): void {
-  // TODO: implement this function
+  const tempInputs = document.querySelectorAll<HTMLInputElement>(
+    'input[name="temperature"]'
+  );
+
+  tempInputs.forEach((input) => {
+    input.addEventListener("change", () => applyTemperature(input));
+  });
+
+  const checked = document.querySelector<HTMLInputElement>(
+    'input[name="temperature"]:checked'
+  );
+  if (checked) applyTemperature(checked);
 }
 
 setupTemperatureListeners();
 
 function setupBaseListeners(): void {
-  // TODO: implement this function
+  const baseInputs = document.querySelectorAll<HTMLInputElement>(
+    'input[name="base"]'
+  );
+
+  baseInputs.forEach((input) => {
+    input.addEventListener("change", () => applyBase(input));
+  });
+
+  const checked = document.querySelector<HTMLInputElement>(
+    'input[name="base"]:checked'
+  );
+  if (checked) applyBase(checked);
 }
 
 setupBaseListeners();
