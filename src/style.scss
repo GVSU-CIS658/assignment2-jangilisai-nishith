@@ -1,6 +1,4 @@
-/* =========================
-   Pouring layers
-   ========================= */
+
 
 @keyframes pour-layer {
   0% {
@@ -21,9 +19,7 @@
   z-index: 300;
 }
 
-/* =========================
-   Syrup mixin (Task 1)
-   ========================= */
+
 
 @mixin syrup-layer($color) {
   background: repeating-linear-gradient(
@@ -35,9 +31,6 @@
   );
 }
 
-/* =========================
-   Syrup layer
-   ========================= */
 
 .syrup {
   position: relative;
@@ -104,9 +97,6 @@
   right: 10px;
 }
 
-/* =========================
-   Mug / carafe
-   ========================= */
 
 .mug {
   width: 8em;
@@ -256,9 +246,6 @@
   animation-delay: 3s;
 }
 
-/* =========================
-   Page / app base styles
-   ========================= */
 
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
